@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+
+}
+
+android {
+    namespace 'com.ratnavidyakanawade.blockemployeeslistassignmentandroid'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.ratnavidyakanawade.blockemployeeslistassignmentandroid"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+          //shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // JUnit
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+
+
+    // Coroutines Test
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+
+    // LiveData Testing
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "com.github.bumptech.glide:glide:4.12.0"
+
+
+    // AndroidX test rules for testing architecture components
+    testImplementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+
+    // AndroidX test rules for testing with Android context
+    testImplementation "androidx.test:core:1.4.0"
+
+    // AndroidX test rules for mocking Android framework classes
+    testImplementation "androidx.test.ext:junit:1.1.3"
+}
